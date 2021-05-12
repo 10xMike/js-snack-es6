@@ -108,25 +108,22 @@ let teams = [
 ];
 
 // Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti.
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 var teamsArray = [];
 
 for (let i = 0; i < teams.length; i++) {
     let team = teams[i];
-    let {puntiFatti, falliSubiti} = team;
-    team.puntiFatti = getRandomInt(0, Infinity);
-    console.log(team.puntiFatti);
-    team.falliSubiti = getRandomInt(0, Infinity);
-    console.log(team.falliSubiti);
-    let teamEl = [];
-    teamEl.push(teams.nome, teams.falliSubiti);
-    teamsArray.push(teamEl);
-    console.log(teamsArray);
+    let {nome, falliSubiti} = teams[i];
+    teamsArray.push({nome, falliSubiti});
 }
-document.getElementById('soccer').innerHTML = `Le squadre sono ${teams.nome} e i loro falli subiti sono: ${teams.falliSubiti}`;
+console.log(teamsArray);
+
+/* document.getElementById('soccer').innerHTML = `Le squadre sono ${teams.nome} e i loro falli subiti sono: ${teams.falliSubiti}`;
+ */
+
 
 
 
