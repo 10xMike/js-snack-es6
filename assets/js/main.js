@@ -1,6 +1,6 @@
 // Snack 1
 // Creare un array di oggetti, ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
-const racingBikes = [
+/* const racingBikes = [
     {
         name: "Serious Valparola",
         weight: 10.88
@@ -31,8 +31,8 @@ for (let i = 0; i < racingBikes.length; i++) {
     }
 }
 console.log(lighterBike);
-document.getElementById('bike').innerHTML = ` Il nome della bici più leggera è: ${lighterBike.name} e il suo peso è: ${lighterBike.weight} `
-
+document.getElementById('bike').innerHTML = ` Il nome della bici più leggera è: ${lighterBike.name} e il suo peso è: ${lighterBike.weight} `; */
+/************************************************************** */
 /* let {name: n, weight: w} = racingBikes;
 var min = w[0];
 for (let i = 0; i < racingBikes.length; i++) {
@@ -121,6 +121,20 @@ let teams = [
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+// MAP 
+/* const squadre = teams.map(team=>{
+    team.puntiFatti = getRandomInt(1,100);
+    team.falliSubiti = getRandomInt(1,100);
+    return team;
+});
+console.log(squadre); */
+// forEach
+teams.forEach(team =>{
+    team.puntiFatti = getRandomInt(1,100);
+    team.falliSubiti = getRandomInt(1,100);
+})
+console.log(teams);
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 var teamsArray = [];
 
@@ -129,11 +143,16 @@ for (let i = 0; i < teams.length; i++) {
     var {nome, falliSubiti} = teams[i];
     teamsArray.push({nome, falliSubiti});
 }
-console.log(teamsArray);
+console.log(teamsArray); 
 
-/* document.getElementById('soccer').innerHTML = `Le squadre sono ${teams.nome} e i loro falli subiti sono: ${teams.falliSubiti}`;
- */
+/* teams.forEach(team =>{ 
+    const {nome, falliSubiti} = team;
+    teamsArray.push({nome, falliSubiti});
+}); */
 
+// Snack 3:
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b)
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 
 
 
