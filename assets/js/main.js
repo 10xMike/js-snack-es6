@@ -1,6 +1,6 @@
 // Snack 1
 // Creare un array di oggetti, ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
-/* const racingBikes = [
+const racingBikes = [
     {
         name: "Serious Valparola",
         weight: 10.88
@@ -31,7 +31,7 @@ for (let i = 0; i < racingBikes.length; i++) {
     }
 }
 console.log(lighterBike);
-document.getElementById('bike').innerHTML = ` Il nome della bici più leggera è: ${lighterBike.name} e il suo peso è: ${lighterBike.weight} `; */
+document.getElementById('bike').innerHTML = ` Il nome della bici più leggera è: ${lighterBike.name} e il suo peso è: ${lighterBike.weight} `;
 /************************************************************** */
 /* let {name: n, weight: w} = racingBikes;
 var min = w[0];
@@ -129,6 +129,7 @@ function getRandomInt(min, max) {
     return team;
 });
 console.log(squadre); */
+
 // forEach
 teams.forEach(team =>{
     team.puntiFatti = getRandomInt(1,100);
@@ -153,8 +154,28 @@ console.log(teamsArray);
 // Snack 3:
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b)
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+/* function getRangeOfValues(list, min, max) {
+    
+} */
 
+/**
+ * ## GetRangeOfValues
+ * Ci restituisce una porzione dell'array compresa tra i valori di minimo e massimo
+ * @param {array} list - un array di valori da filtrare
+ * @param {number} min - valore minimo di elementi
+ * @param {number} max - valore massimo di elementi
+ */
 
+const rangeOfValues = (list, min, max) => {
+    const newArr= list.filter((element, index) =>{
+        return index >= min && index <= max;
+    })
+    return newArr
+}
 
+const movies = ['Star Trek', 'Star Wars', 'Jurassic Park', 'Matrix', 'Lord of the Ring', 'Inception', 'John Wick'];
+
+const risultato = rangeOfValues(movies, 2, 5);
+console.log(risultato);
 
 
